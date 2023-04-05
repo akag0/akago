@@ -6,6 +6,7 @@ import {
   Stack,
   Text,
   chakra,
+  useToast,
 } from "@chakra-ui/react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
@@ -15,13 +16,18 @@ import { useRouter } from "next/router";
 const RegisterForm: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const toast = useToast();
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      alert("登録できました");
+      toast({
+        title: "タイプを選択してください。",
+        status: "success",
+        position: "top",
+      });
       setEmail("");
       setPassword("");
       router.push("/users/profile/create/gender");
