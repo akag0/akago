@@ -42,9 +42,9 @@ const DonorCreateProfile: NextPage = () => {
 
   const onFileChange = (e: any) => {
     if (user) {
-      const userEmail = user.email;
+      const uid = user.uid;
       const file = e.target.files[0];
-      const storageRef = ref(storage, `${userEmail}/${file.name}`);
+      const storageRef = ref(storage, `profileImages/userEmail/${uid}`);
       uploadBytes(storageRef, file).then((snapshot) => {
         console.log("Uploaded a blob or file!");
         setImageUrl(snapshot.ref.fullPath);

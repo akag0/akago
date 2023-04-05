@@ -19,12 +19,8 @@ import { auth } from "../../firebase";
 import { GrMailOption } from "react-icons/gr";
 import { BiUserCircle } from "react-icons/bi";
 import { FiSearch } from "react-icons/fi";
-import { useRouter } from "next/router";
-import Logo from "../../public/images/logo.png";
-import Image from "next/image";
 
 const Footer: React.FC = () => {
-  const user = useAuthContext();
   // const { user } = useAuthContext();
   // const toast = useToast();
   // const Router = useRouter();
@@ -80,9 +76,11 @@ const Footer: React.FC = () => {
           <Center>
             <BiUserCircle />
           </Center>
-          <Text textAlign={"center"} fontSize={"10px"}>
-            マイページ
-          </Text>
+          <Link href={"/users/profile"}>
+            <Text textAlign={"center"} fontSize={"10px"}>
+              マイページ
+            </Text>
+          </Link>
         </Box>
       </Flex>
     </Box>

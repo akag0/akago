@@ -8,7 +8,7 @@ type ImagePreviewProps = {
   imageUrl: string;
 };
 
-export const ImagePreview: React.VFC<ImagePreviewProps> = ({ imageUrl }) => {
+export const ImagePreview: React.FC<ImagePreviewProps> = ({ imageUrl }) => {
   const [imageSrc, setImageSrc] = useState<string | null>(null);
 
   useEffect(() => {

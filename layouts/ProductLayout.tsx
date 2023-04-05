@@ -1,5 +1,6 @@
 import { Box } from "@chakra-ui/react";
 import { doc, getDoc } from "firebase/firestore";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Footer from "../components/organisms/Footer";
 import Navbar from "../components/organisms/Navbar";
@@ -26,6 +27,7 @@ type Profile = {
 const ProductLayout: React.FC<Props> = ({ children }) => {
   const { user } = useAuthContext();
   const [profile, setProfile] = useState<Profile>();
+  const Router = useRouter();
 
   useEffect(() => {
     try {
@@ -42,7 +44,7 @@ const ProductLayout: React.FC<Props> = ({ children }) => {
     } catch (e) {
       console.log("エラーです");
     }
-  }, [user]);
+  }, [user, Router.asPath]);
 
   return (
     <>

@@ -56,8 +56,6 @@ const CreateGender: NextPage = () => {
       } else {
         Router.push("/users/profile/create/donnie/completion-registration");
       }
-
-      Router.push("/users/profile");
     } catch (e) {
       toast({
         title: "必要項目を入力してください。",

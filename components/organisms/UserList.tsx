@@ -92,7 +92,7 @@ const UserList = () => {
         {imageDataList.map((imageData, index) => (
           <VStack key={index}>
             <Image
-              style={{ borderRadius: "50%", width: "140px", height: "140px" }}
+              style={{ borderRadius: "8px", width: "140px", height: "140px" }}
               src={imageData.url}
               alt={`User image ${index}`}
             />

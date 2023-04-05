@@ -37,7 +37,7 @@ const DonnieProfileConfirm: NextPage<Props> = () => {
   }, [user]);
 
   return (
-    <Box pt={24}>
+    <Box>
       <Confirm imageUrl={imageUrl} profile={profile} isLoading={isLoading} />
     </Box>
   );
